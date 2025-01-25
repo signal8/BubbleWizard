@@ -1,34 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7f7kximqjrij"]
+[gd_scene load_steps=7 format=3 uid="uid://b7f7kximqjrij"]
 
 [ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_h2nde"]
-[ext_resource type="Texture2D" uid="uid://8s66swxfpe5s" path="res://Art/bubble-placeholder.png" id="2_8plvq"]
-[ext_resource type="Script" path="res://Scenes/bubble_collision.gd" id="3_6vnh0"]
+[ext_resource type="Texture2D" uid="uid://ckumjkorgx3tq" path="res://Art/frog1.png" id="2_24xor"]
+[ext_resource type="Texture2D" uid="uid://d2msnqcdyekb1" path="res://Art/shrimp1.png" id="3_hndbo"]
+[ext_resource type="Texture2D" uid="uid://dg7gcxigak2fi" path="res://Art/frog2.png" id="4_eu8pi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e35f5"]
-size = Vector2(50, 53)
+size = Vector2(40, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ym816"]
-radius = 42.0268
+radius = 22.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
+motion_mode = 1
 script = ExtResource("1_h2nde")
+greenTexture = ExtResource("2_24xor")
+brownTexture = ExtResource("3_hndbo")
+greenTextureBubble = ExtResource("4_eu8pi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1.5)
+position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_e35f5")
 
 [node name="BubbleSprite" type="Sprite2D" parent="."]
 visible = false
+texture_filter = 1
 position = Vector2(-0.499998, 2.5)
-scale = Vector2(2.71875, 2.53125)
-texture = ExtResource("2_8plvq")
+scale = Vector2(4, 4)
+texture = ExtResource("4_eu8pi")
 
 [node name="BubbleCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1.5)
+position = Vector2(2, 9)
 shape = SubResource("CircleShape2D_ym816")
 disabled = true
-script = ExtResource("3_6vnh0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_24xor")

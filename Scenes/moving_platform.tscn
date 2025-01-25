@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trpfs"]
 size = Vector2(393, 63)
 
-[node name="MovingPlatform" type="CharacterBody2D"]
+[node name="MovingPlatform" type="CharacterBody2D" groups=["destructable"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_k2ggt")
