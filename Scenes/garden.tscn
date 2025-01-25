@@ -1,55 +1,39 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2s8rrvira0ci"]
+[gd_scene load_steps=10 format=4 uid="uid://d2s8rrvira0ci"]
 
 [ext_resource type="PackedScene" uid="uid://c6g21h30k2ahx" path="res://Scenes/player.tscn" id="1_68wpw"]
 [ext_resource type="PackedScene" uid="uid://b7f7kximqjrij" path="res://Scenes/enemy.tscn" id="2_i6j0c"]
 [ext_resource type="Texture2D" uid="uid://c5wbxg42n3w53" path="res://Art/other-monster-placeholder.png" id="3_36671"]
 [ext_resource type="Texture2D" uid="uid://crn2qdwi04qi3" path="res://Art/dietcoke_color1.png" id="3_u4atn"]
 [ext_resource type="Texture2D" uid="uid://eull2r2fjy6w" path="res://Art/monster-placeholder.png" id="4_0megc"]
+[ext_resource type="Texture2D" uid="uid://1a3tny0bocne" path="res://Art/tile-placeholder.png" id="6_eq0d1"]
+[ext_resource type="PackedScene" uid="uid://ct5mp44fr8k0w" path="res://Scenes/moving_platform.tscn" id="7_8dfoo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrd7u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wb00"]
+texture = ExtResource("6_eq0d1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nggcs"]
+[sub_resource type="TileSet" id="TileSet_nh7os"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_3wb00")
 
 [node name="Node2D" type="Node2D"]
 
+[node name="DietcokeColor1" type="Sprite2D" parent="."]
+position = Vector2(1216, 289.5)
+scale = Vector2(2436, 4.58594)
+texture = ExtResource("3_u4atn")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAARAAkAAQAAAAAAAAARAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAADAAoAAQAAAAAAAAACAAoAAQAAAAAAAAABAAoAAQAAAAAAAAAAAAoAAQAAAAAAAAARAAgAAQABAAAAAAARAAcAAQABAAAAAAAAAAcAAQABAAAAAAAAAAgAAQABAAAAAAAAAAYAAQABAAAAAAABAAcAAQABAAAAAAABAAgAAQABAAAAAAACAAgAAQABAAAAAAADAAgAAQABAAAAAAACAAcAAQABAAAAAAABAAYAAQABAAAAAAD//woAAQAAAAAAAAD//wkAAQAAAAAAAAD//wgAAQAAAAAAAAD//wcAAQAAAAAAAAD//wYAAQAAAAAAAAD//wUAAQAAAAAAAAD//wQAAQAAAAAAAAD//wMAAQAAAAAAAAD//wIAAQAAAAAAAAD//wEAAQAAAAAAAAD//wAAAQAAAAAAAAD/////AQAAAAAAAAAAAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAJAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAAPAP//AQAAAAAAAAAQAP//AQAAAAAAAAARAP//AQAAAAAAAAASAP//AQAAAAAAAAATAP//AQAAAAAAAAAUAP//AQAAAAAAAAAVAP//AQAAAAAAAAAWAP//AQAAAAAAAAAXAP//AQAAAAAAAAAYAP//AQAAAAAAAAAZAP//AQAAAAAAAAAaAP//AQAAAAAAAAAbAP//AQAAAAAAAAAcAP//AQAAAAAAAAAdAP//AQAAAAAAAAAeAP//AQAAAAAAAAAfAP//AQAAAAAAAAAgAP//AQAAAAAAAAAhAP//AQAAAAAAAAASAAkAAQAAAAAAAAATAAkAAQAAAAAAAAAUAAkAAQAAAAAAAAAVAAkAAQAAAAAAAAAWAAkAAQAAAAAAAAAXAAkAAQAAAAAAAAAYAAkAAQAAAAAAAAAZAAkAAQAAAAAAAAAaAAkAAQAAAAAAAAAbAAkAAQAAAAAAAAAcAAkAAQAAAAAAAAAdAAkAAQAAAAAAAAAeAAkAAQAAAAAAAAAfAAkAAQAAAAAAAAAgAAkAAQAAAAAAAAAhAAkAAQAAAAAAAAAiAAkAAQAAAAAAAAAlAAkAAQAAAAAAAAAkAAkAAQAAAAAAAAAjAAkAAQAAAAAAAAAlAAoAAQAAAAAAAAAkAAoAAQAAAAAAAAAjAAoAAQAAAAAAAAAiAAoAAQAAAAAAAAAhAAoAAQAAAAAAAAAgAAoAAQAAAAAAAAAfAAoAAQAAAAAAAAAeAAoAAQAAAAAAAAAdAAoAAQAAAAAAAAAcAAoAAQAAAAAAAAAbAAoAAQAAAAAAAAAaAAoAAQAAAAAAAAAZAAoAAQAAAAAAAAAYAAoAAQAAAAAAAAAXAAoAAQAAAAAAAAAWAAoAAQAAAAAAAAAVAAoAAQAAAAAAAAAUAAoAAQAAAAAAAAATAAoAAQAAAAAAAAASAAoAAQAAAAAAAAAmAAoAAQAAAAAAAAAmAAkAAQAAAAAAAAAmAAgAAQAAAAAAAAAmAAcAAQAAAAAAAAAmAAYAAQAAAAAAAAAmAAUAAQAAAAAAAAAmAAQAAQAAAAAAAAAmAAMAAQAAAAAAAAAmAAIAAQAAAAAAAAAmAAEAAQAAAAAAAAAmAAAAAQAAAAAAAAAmAP//AQAAAAAAAAAlAP//AQAAAAAAAAAkAP//AQAAAAAAAAAjAP//AQAAAAAAAAAiAP//AQAAAAAAAAASAAcAAQABAAAAAAASAAgAAQABAAAAAAATAAcAAQABAAAAAAATAAgAAQABAAAAAAAUAAcAAQABAAAAAAAUAAgAAQABAAAAAAAZAAgAAQABAAAAAAAZAAcAAQABAAAAAAAZAAYAAQABAAAAAAAaAAYAAQABAAAAAAAaAAcAAQABAAAAAAAaAAgAAQABAAAAAAAfAAgAAQABAAAAAAAfAAcAAQABAAAAAAAfAAYAAQABAAAAAAAfAAUAAQABAAAAAAAgAAUAAQABAAAAAAAgAAYAAQABAAAAAAAgAAcAAQABAAAAAAAgAAgAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_nh7os")
+
 [node name="Player" parent="." instance=ExtResource("1_68wpw")]
 position = Vector2(309, 279)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(575, 600)
-scale = Vector2(60, 5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_qrd7u")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(0, 4.76837e-07)
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_nggcs")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(203, 499)
-scale = Vector2(21.96, 5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("RectangleShape2D_qrd7u")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(0, 4.76837e-07)
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_nggcs")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(1137, 499)
-scale = Vector2(5.88001, 5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("RectangleShape2D_qrd7u")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
-position = Vector2(0, 4.76837e-07)
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_nggcs")
 
 [node name="Enemy" parent="." instance=ExtResource("2_i6j0c")]
 position = Vector2(865, 517)
@@ -61,6 +45,5 @@ position = Vector2(671, 516)
 greenTexture = ExtResource("3_36671")
 redTexture = ExtResource("4_0megc")
 
-[node name="DietcokeColor1" type="Sprite2D" parent="."]
-position = Vector2(813, 138)
-texture = ExtResource("3_u4atn")
+[node name="MovingPlatform" parent="." instance=ExtResource("7_8dfoo")]
+position = Vector2(1354, 248)

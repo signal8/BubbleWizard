@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct5mp44fr8k0w"]
+
+[ext_resource type="Texture2D" uid="uid://1a3tny0bocne" path="res://Art/tile-placeholder.png" id="1_2seab"]
+[ext_resource type="Script" path="res://Code/moving_platform.gd" id="1_k2ggt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trpfs"]
+size = Vector2(393, 63)
+
+[node name="MovingPlatform" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_k2ggt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_trpfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.499992, 0)
+scale = Vector2(3.10156, 1)
+texture = ExtResource("1_2seab")
