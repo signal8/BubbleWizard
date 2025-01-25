@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7f7kximqjrij"]
+[gd_scene load_steps=6 format=3 uid="uid://b7f7kximqjrij"]
 
 [ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_h2nde"]
 [ext_resource type="Texture2D" uid="uid://8s66swxfpe5s" path="res://Art/bubble-placeholder.png" id="2_8plvq"]
+[ext_resource type="Script" path="res://Scenes/bubble_collision.gd" id="3_6vnh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e35f5"]
 size = Vector2(50, 53)
@@ -28,5 +29,6 @@ texture = ExtResource("2_8plvq")
 position = Vector2(-1, 1.5)
 shape = SubResource("CircleShape2D_ym816")
 disabled = true
+script = ExtResource("3_6vnh0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

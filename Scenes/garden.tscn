@@ -53,7 +53,6 @@ texture = SubResource("PlaceholderTexture2D_nggcs")
 
 [node name="Enemy" parent="." instance=ExtResource("2_i6j0c")]
 position = Vector2(865, 517)
-currentType = 2
 greenTexture = ExtResource("3_36671")
 redTexture = ExtResource("4_0megc")
 

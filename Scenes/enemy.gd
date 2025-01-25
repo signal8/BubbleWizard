@@ -11,18 +11,13 @@ enum state {
 	DEAD
 }
 
-enum type {
-	GREEN,
-	BROWN,
-	RED,
-	PURPLE
-}
+@export var type = 0
 
 const SPEED = 100
 var direction = -1
 
 @export var currentState : state
-@export var currentType : type
+var currentType : int
 
 @export var greenTexture : Texture2D
 @export var brownTexture : Texture2D
@@ -33,24 +28,24 @@ var direction = -1
 
 func _ready() -> void:
 	match currentType:
-		0: #Green
+		0: #acid
 			sprite.texture = greenTexture
-		1: #Brown
+		1: #mud
 			sprite.texture = brownTexture
-		2: #Red
+		2: #wind
 			sprite.texture = redTexture
-		3: #purple
+		3: #gum
 			sprite.texture = purpleTexture
 
 
 
 func _physics_process(delta: float) -> void:
 	match currentState:
-		0: #Roaming
+		state.ROAMING: #Roaming
 			velocity.x = SPEED * direction
-		1: #Captured
+		state.CAPTURED: #Captured
 			sprite.rotation += 1 * delta
-		2: #Dead
+		state.DEAD: #Dead
 			pass
 	
 	move_and_slide()
