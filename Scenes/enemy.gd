@@ -18,6 +18,9 @@ enum type {
 	PURPLE
 }
 
+const SPEED = 100
+var direction = -1
+
 @export var currentState : state
 @export var currentType : type
 
@@ -25,6 +28,8 @@ enum type {
 @export var brownTexture : Texture2D
 @export var redTexture : Texture2D
 @export var purpleTexture : Texture2D
+
+
 
 func _ready() -> void:
 	match currentType:
@@ -37,15 +42,23 @@ func _ready() -> void:
 		3: #purple
 			sprite.texture = purpleTexture
 
-func _process(delta: float) -> void:
+
+
+func _physics_process(delta: float) -> void:
 	match currentState:
 		0: #Roaming
-			pass
+			velocity.x = SPEED * direction
 		1: #Captured
 			sprite.rotation += 1 * delta
 		2: #Dead
 			pass
 	
+	move_and_slide()
+	
+	if velocity.x == 0:
+		direction *= -1
+
+
 
 func capture():
 	if currentState == 1: return
@@ -55,4 +68,5 @@ func capture():
 	collision.set_deferred("disabled", true)
 	await get_tree().process_frame
 	bubbleCollision.set_deferred("disabled", false)
+	velocity = Vector2.ZERO
 	currentState = 1

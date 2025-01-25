@@ -27,16 +27,38 @@ position = Vector2(0, 4.76837e-07)
 scale = Vector2(20, 20)
 texture = SubResource("PlaceholderTexture2D_nggcs")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(203, 499)
+scale = Vector2(21.96, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_qrd7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_nggcs")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1137, 499)
+scale = Vector2(5.88001, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_qrd7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_nggcs")
+
 [node name="Enemy" parent="." instance=ExtResource("2_i6j0c")]
-position = Vector2(865, 493)
-scale = Vector2(2, 2)
+position = Vector2(865, 517)
 currentType = 2
 greenTexture = ExtResource("3_36671")
 redTexture = ExtResource("4_0megc")
 
 [node name="Enemy2" parent="." instance=ExtResource("2_i6j0c")]
-position = Vector2(671, 492)
-scale = Vector2(2, 2)
+position = Vector2(671, 516)
 greenTexture = ExtResource("3_36671")
 redTexture = ExtResource("4_0megc")
 
