@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2s8rrvira0ci"]
+[gd_scene load_steps=8 format=3 uid="uid://d2s8rrvira0ci"]
 
 [ext_resource type="PackedScene" uid="uid://c6g21h30k2ahx" path="res://Scenes/player.tscn" id="1_68wpw"]
 [ext_resource type="PackedScene" uid="uid://b7f7kximqjrij" path="res://Scenes/enemy.tscn" id="2_i6j0c"]
+[ext_resource type="Texture2D" uid="uid://c5wbxg42n3w53" path="res://Art/other-monster-placeholder.png" id="3_36671"]
 [ext_resource type="Texture2D" uid="uid://crn2qdwi04qi3" path="res://Art/dietcoke_color1.png" id="3_u4atn"]
+[ext_resource type="Texture2D" uid="uid://eull2r2fjy6w" path="res://Art/monster-placeholder.png" id="4_0megc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrd7u"]
 
@@ -26,8 +28,17 @@ scale = Vector2(20, 20)
 texture = SubResource("PlaceholderTexture2D_nggcs")
 
 [node name="Enemy" parent="." instance=ExtResource("2_i6j0c")]
-position = Vector2(866, 479)
+position = Vector2(865, 493)
 scale = Vector2(2, 2)
+currentType = 2
+greenTexture = ExtResource("3_36671")
+redTexture = ExtResource("4_0megc")
+
+[node name="Enemy2" parent="." instance=ExtResource("2_i6j0c")]
+position = Vector2(671, 492)
+scale = Vector2(2, 2)
+greenTexture = ExtResource("3_36671")
+redTexture = ExtResource("4_0megc")
 
 [node name="DietcokeColor1" type="Sprite2D" parent="."]
 position = Vector2(813, 138)
