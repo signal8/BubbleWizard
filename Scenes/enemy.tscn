@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7f7kximqjrij"]
+
+[ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_h2nde"]
+[ext_resource type="Texture2D" uid="uid://eull2r2fjy6w" path="res://Art/monster-placeholder.png" id="1_kcyoo"]
+[ext_resource type="Texture2D" uid="uid://8s66swxfpe5s" path="res://Art/bubble-placeholder.png" id="2_8plvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e35f5"]
+size = Vector2(50, 53)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ym816"]
+radius = 42.0268
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_h2nde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_e35f5")
+
+[node name="BubbleSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.499998, 2.5)
+scale = Vector2(2.71875, 2.53125)
+texture = ExtResource("2_8plvq")
+
+[node name="BubbleCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1.5)
+shape = SubResource("CircleShape2D_ym816")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kcyoo")

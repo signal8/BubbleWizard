@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2s8rrvira0ci"]
+
+[ext_resource type="PackedScene" uid="uid://c6g21h30k2ahx" path="res://Scenes/player.tscn" id="1_68wpw"]
+[ext_resource type="PackedScene" uid="uid://b7f7kximqjrij" path="res://Scenes/enemy.tscn" id="2_i6j0c"]
+[ext_resource type="Texture2D" uid="uid://crn2qdwi04qi3" path="res://Art/dietcoke_color1.png" id="3_u4atn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrd7u"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nggcs"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_68wpw")]
+position = Vector2(309, 279)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(575, 600)
+scale = Vector2(60, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_qrd7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_nggcs")
+
+[node name="Enemy" parent="." instance=ExtResource("2_i6j0c")]
+position = Vector2(866, 479)
+scale = Vector2(2, 2)
+
+[node name="DietcokeColor1" type="Sprite2D" parent="."]
+position = Vector2(813, 138)
+texture = ExtResource("3_u4atn")
