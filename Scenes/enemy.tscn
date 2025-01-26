@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7f7kximqjrij"]
+[gd_scene load_steps=12 format=3 uid="uid://b7f7kximqjrij"]
 
 [ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_h2nde"]
 [ext_resource type="Texture2D" uid="uid://ckumjkorgx3tq" path="res://Art/frog1.png" id="2_24xor"]
 [ext_resource type="Texture2D" uid="uid://d2msnqcdyekb1" path="res://Art/shrimp1.png" id="3_hndbo"]
 [ext_resource type="Texture2D" uid="uid://dg7gcxigak2fi" path="res://Art/frog2.png" id="4_eu8pi"]
+[ext_resource type="Texture2D" uid="uid://cdcwar3wffc57" path="res://Art/squid1.png" id="4_ipu0l"]
+[ext_resource type="Texture2D" uid="uid://ccg3jd4bg8gbu" path="res://Art/ele1.png" id="5_lhq44"]
+[ext_resource type="Texture2D" uid="uid://cuqnodxrvo16q" path="res://Art/shrimp2.png" id="7_s5dxe"]
+[ext_resource type="Texture2D" uid="uid://txij5hvnyv0e" path="res://Art/squid2.png" id="8_4yoc2"]
+[ext_resource type="Texture2D" uid="uid://ctal4bqdxsw01" path="res://Art/ele2.png" id="9_031bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e35f5"]
 size = Vector2(40, 28)
@@ -18,7 +23,12 @@ motion_mode = 1
 script = ExtResource("1_h2nde")
 greenTexture = ExtResource("2_24xor")
 brownTexture = ExtResource("3_hndbo")
+redTexture = ExtResource("4_ipu0l")
+purpleTexture = ExtResource("5_lhq44")
 greenTextureBubble = ExtResource("4_eu8pi")
+brownTextureBubble = ExtResource("7_s5dxe")
+redTextureBubble = ExtResource("8_4yoc2")
+purpleTextureBubble = ExtResource("9_031bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 18)

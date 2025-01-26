@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://d2s8rrvira0ci"]
+[gd_scene load_steps=8 format=4 uid="uid://d2s8rrvira0ci"]
 
 [ext_resource type="PackedScene" uid="uid://c6g21h30k2ahx" path="res://Scenes/player.tscn" id="1_68wpw"]
 [ext_resource type="PackedScene" uid="uid://b7f7kximqjrij" path="res://Scenes/enemy.tscn" id="2_i6j0c"]
 [ext_resource type="Texture2D" uid="uid://crn2qdwi04qi3" path="res://Art/dietcoke_color1.png" id="3_u4atn"]
-[ext_resource type="Texture2D" uid="uid://eull2r2fjy6w" path="res://Art/monster-placeholder.png" id="4_0megc"]
 [ext_resource type="Texture2D" uid="uid://1a3tny0bocne" path="res://Art/tile-placeholder.png" id="6_eq0d1"]
 [ext_resource type="PackedScene" uid="uid://ct5mp44fr8k0w" path="res://Scenes/moving_platform.tscn" id="7_8dfoo"]
 
@@ -36,11 +35,11 @@ position = Vector2(309, 279)
 
 [node name="Enemy" parent="." instance=ExtResource("2_i6j0c")]
 position = Vector2(865, 517)
-redTexture = ExtResource("4_0megc")
+type = 3
 
 [node name="Enemy2" parent="." instance=ExtResource("2_i6j0c")]
 position = Vector2(671, 516)
-redTexture = ExtResource("4_0megc")
+type = 3
 
 [node name="MovingPlatform" parent="." instance=ExtResource("7_8dfoo")]
 position = Vector2(597, 435)

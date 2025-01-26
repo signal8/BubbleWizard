@@ -33,6 +33,7 @@ var currentType : int
 var collider
 
 func _ready() -> void:
+	currentType = type
 	match currentType:
 		0: #acid
 			sprite.texture = greenTexture
@@ -62,13 +63,25 @@ func _physics_process(delta: float) -> void:
 					if collider != null:
 						if collider.get_collider().is_in_group("destructable"):
 							collider.get_collider().queue_free()
+						currentState = state.DEAD
 						queue_free()
 				1:
-					pass
+					if not is_on_floor():
+						velocity += get_gravity() * delta
+						move_and_collide(Vector2(0, velocity.y))
 				2:
-					pass
+					if scale >= Vector2(2,2):
+						currentState = state.DEAD
+						queue_free()
+					else: scale += Vector2(0.05, 0.05)
 				3:
-					pass
+					collider = move_and_collide(Vector2(0, -delta * 4))
+					if collider != null:
+						print_debug(collider)
+						if collider.get_collider().is_in_group("player"):
+							collider.get_collider().propel()
+							currentState = state.DEAD
+							queue_free()
 		state.DEAD: #Dead
 			pass
 	
@@ -87,6 +100,7 @@ func capture():
 	bubbleCollision.set_deferred("disabled", false)
 	velocity = Vector2.ZERO
 	currentState = 1
+	position.y -= 10
 
 
 ### DANGER ZONE

@@ -38,3 +38,7 @@ func shootBubble(d):
 	add_child(b)
 	b.direction = d
 	
+
+func propel():
+	velocity.y -= 9000
+	print_debug("LAUNCH")
