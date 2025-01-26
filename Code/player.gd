@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 @export var bubble : PackedScene
 @export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
+@export var JUMP_VELOCITY = -600.0
 @export var firing_rate = 0.5
 
 var queued_direction = 1
 @onready var timer = $Timer
+var collider
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -30,8 +31,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("bubble") and timer.is_stopped():
 		shootBubble(queued_direction)
 		timer.start(firing_rate)
-
+	
 	move_and_slide()
+	for i in get_slide_collision_count():
+		collider = get_slide_collision(i)
+		if collider.get_collider().is_in_group("killer"): die()
 
 func shootBubble(d):
 	var b = bubble.instantiate()
@@ -40,5 +44,8 @@ func shootBubble(d):
 	
 
 func propel():
-	velocity.y -= 9000
+	velocity.y -= 1000
 	print_debug("LAUNCH")
+
+func die():
+	get_tree().reload_current_scene()

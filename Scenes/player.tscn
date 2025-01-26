@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c6g21h30k2ahx"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_s06i6"]
+[ext_resource type="Script" path="res://Code/player.gd" id="1_s06i6"]
 [ext_resource type="PackedScene" uid="uid://deqg3o34e7uoj" path="res://Scenes/bubble.tscn" id="2_0au1k"]
 [ext_resource type="Texture2D" uid="uid://nfdepp04nwn3" path="res://Art/Bubble_wizard_animation_12525.png" id="3_3hceg"]
 

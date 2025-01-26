@@ -66,9 +66,7 @@ func _physics_process(delta: float) -> void:
 						currentState = state.DEAD
 						queue_free()
 				1:
-					if not is_on_floor():
-						velocity += get_gravity() * delta
-						move_and_collide(Vector2(0, velocity.y))
+					pass
 				2:
 					if scale >= Vector2(2,2):
 						currentState = state.DEAD
@@ -101,6 +99,9 @@ func capture():
 	velocity = Vector2.ZERO
 	currentState = 1
 	position.y -= 10
+	if currentType == 1: scale = Vector2(4, 1)
+	if currentType == 2: add_to_group("gum")
+	remove_from_group("killer")
 
 
 ### DANGER ZONE
