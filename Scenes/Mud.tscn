@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://drttrroo2d2m0"]
+[gd_scene load_steps=14 format=4 uid="uid://drttrroo2d2m0"]
 
 [ext_resource type="Texture2D" uid="uid://1a3tny0bocne" path="res://Art/tile-placeholder.png" id="2_c3jx6"]
 [ext_resource type="PackedScene" uid="uid://c6g21h30k2ahx" path="res://Scenes/player.tscn" id="3_f5pdf"]
 [ext_resource type="Texture2D" uid="uid://c17xlqh5gw628" path="res://Art/hazards_and_key.png" id="3_upur7"]
 [ext_resource type="PackedScene" uid="uid://b7f7kximqjrij" path="res://Scenes/enemy.tscn" id="4_1iwou"]
 [ext_resource type="Texture2D" uid="uid://dl0pxfkpo53js" path="res://Art/grates_mud_final.png" id="4_qiqas"]
+[ext_resource type="PackedScene" uid="uid://cso81hsf8msnu" path="res://Scenes/key.tscn" id="5_u1fla"]
 [ext_resource type="PackedScene" uid="uid://b6eudqn7nytfv" path="res://Scenes/spike.tscn" id="6_cab3a"]
+[ext_resource type="PackedScene" uid="uid://d2s8rrvira0ci" path="res://Scenes/garden.tscn" id="6_iyiy2"]
 [ext_resource type="PackedScene" uid="uid://bluqd31f10b5" path="res://Scenes/crossbow.tscn" id="7_f4ex0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wb00"]
@@ -115,6 +117,10 @@ tile_set = SubResource("TileSet_nh7os")
 
 [node name="Player" parent="." instance=ExtResource("3_f5pdf")]
 position = Vector2(385, 2181)
+
+[node name="Key" parent="." instance=ExtResource("5_u1fla")]
+position = Vector2(866, 484)
+nextLevel = ExtResource("6_iyiy2")
 
 [node name="Enemies" type="Node" parent="."]
 

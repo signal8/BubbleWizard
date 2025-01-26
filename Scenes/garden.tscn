@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://d2s8rrvira0ci"]
+[gd_scene load_steps=12 format=4 uid="uid://d2s8rrvira0ci"]
 
 [ext_resource type="PackedScene" uid="uid://c6g21h30k2ahx" path="res://Scenes/player.tscn" id="1_68wpw"]
 [ext_resource type="PackedScene" uid="uid://b7f7kximqjrij" path="res://Scenes/enemy.tscn" id="2_i6j0c"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://1a3tny0bocne" path="res://Art/tile-placeholder.png" id="6_eq0d1"]
 [ext_resource type="PackedScene" uid="uid://ct5mp44fr8k0w" path="res://Scenes/moving_platform.tscn" id="7_8dfoo"]
 [ext_resource type="PackedScene" uid="uid://bluqd31f10b5" path="res://Scenes/crossbow.tscn" id="7_ebgs1"]
+[ext_resource type="PackedScene" uid="uid://cso81hsf8msnu" path="res://Scenes/key.tscn" id="8_snqqg"]
+[ext_resource type="PackedScene" uid="uid://drttrroo2d2m0" path="res://Scenes/Mud.tscn" id="9_t47jm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wb00"]
 texture = ExtResource("6_eq0d1")
@@ -60,3 +62,7 @@ position = Vector2(1175, 429)
 [node name="Crossbow" parent="." instance=ExtResource("7_ebgs1")]
 position = Vector2(261, 571)
 rotation = -0.352267
+
+[node name="Key" parent="." instance=ExtResource("8_snqqg")]
+position = Vector2(116, 316)
+nextLevel = ExtResource("9_t47jm")
