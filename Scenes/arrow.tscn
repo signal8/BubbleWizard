@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cdcqi8tx511fc" path="res://Art/arrow.png" id="1_uqkau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_637gl"]
-size = Vector2(11, 0.5)
+size = Vector2(8, 0.5)
 
 [node name="Arrow" type="Area2D" groups=["killer"]]
 script = ExtResource("1_i0hkh")
 arrowSpeed = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_637gl")
 

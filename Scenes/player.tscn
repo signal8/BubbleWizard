@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://c6g21h30k2ahx"]
+[gd_scene load_steps=32 format=3 uid="uid://c6g21h30k2ahx"]
 
 [ext_resource type="Script" path="res://Code/player.gd" id="1_s06i6"]
 [ext_resource type="PackedScene" uid="uid://deqg3o34e7uoj" path="res://Scenes/bubble.tscn" id="2_0au1k"]
 [ext_resource type="Texture2D" uid="uid://nfdepp04nwn3" path="res://Art/Bubble_wizard_animation_12525.png" id="3_3hceg"]
+[ext_resource type="PackedScene" uid="uid://cvqp3qgsd3nj5" path="res://Scenes/title.tscn" id="3_wjd4s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kndku"]
 radius = 23.0
@@ -221,6 +222,7 @@ collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_s06i6")
 bubble = ExtResource("2_0au1k")
+title = ExtResource("3_wjd4s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_kndku")
