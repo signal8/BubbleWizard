@@ -64,4 +64,3 @@ texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_mfddi")
 animation = &"idle"
-frame_progress = 0.43075
