@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://bcyo0ahlo01jd"]
 
-[sub_resource type="SystemFont" id="SystemFont_h8u5f"]
+[ext_resource type="FontFile" uid="uid://c5mr3vfp44eaj" path="res://Art/GL-StellaMystica.ttf" id="1_mdytp"]
 
 [resource]
-default_font = SubResource("SystemFont_h8u5f")
+default_font = ExtResource("1_mdytp")
 default_font_size = 72

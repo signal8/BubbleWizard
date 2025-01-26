@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpj63h4iumk00"]
+
+[ext_resource type="Theme" uid="uid://bcyo0ahlo01jd" path="res://Scenes/theme.tres" id="1_8lqye"]
+[ext_resource type="Script" path="res://Code/title.gd" id="2_4r4l1"]
+[ext_resource type="PackedScene" uid="uid://drttrroo2d2m0" path="res://Scenes/Mud.tscn" id="3_bnmv2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8lqye")
+script = ExtResource("2_4r4l1")
+firstLevel = ExtResource("3_bnmv2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.0
+offset_top = -74.0
+offset_right = 514.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8lqye")
+text = "Thank you for playing!"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Programmers: Levi Coffing, Isaac Richardson
+Level Designers: Julian Park, Adam Wade
+Artist: Fallon Hare
+Music: Adam Schreiber
+Sound Effects: Logan Hare"
+fit_content = true

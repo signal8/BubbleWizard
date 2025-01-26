@@ -5,6 +5,13 @@ extends CharacterBody2D
 @onready var collision = $CollisionShape2D
 @onready var bubbleCollision = $BubbleCollision
 
+@onready var audio = $AudioStreamPlayer
+@onready var mudaudio = $MUD
+@onready var acidcue = $AbsorptionAudio/Acid
+@onready var gumcue = $AbsorptionAudio/Gum
+@onready var mudcue = $AbsorptionAudio/Mud
+@onready var windcue = $AbsorptionAudio/Wind
+
 enum state {
 	ROAMING,
 	CAPTURED,
@@ -63,14 +70,14 @@ func _physics_process(delta: float) -> void:
 					if collider != null:
 						if collider.get_collider().is_in_group("destructable"):
 							collider.get_collider().queue_free()
+						audio.play()
 						currentState = state.DEAD
-						queue_free()
 				1:
 					pass
 				2:
 					if scale >= Vector2(2,2):
+						audio.play()
 						currentState = state.DEAD
-						queue_free()
 					else: scale += Vector2(0.05, 0.05)
 				3:
 					collider = move_and_collide(Vector2(0, -delta * 4))
@@ -78,10 +85,11 @@ func _physics_process(delta: float) -> void:
 						print_debug(collider)
 						if collider.get_collider().is_in_group("player"):
 							collider.get_collider().propel()
+							audio.play()
 							currentState = state.DEAD
-							queue_free()
+
 		state.DEAD: #Dead
-			pass
+			if audio.playing == false: queue_free()
 	
 	if velocity.x == 0:
 		direction *= -1
@@ -99,8 +107,20 @@ func capture():
 	velocity = Vector2.ZERO
 	currentState = 1
 	position.y -= 10
-	if currentType == 1: scale = Vector2(4, 1)
+	if currentType == 1: 
+		scale = Vector2(4, 1)
+		mudaudio.play()
 	if currentType == 2: add_to_group("gum")
+	match currentState:
+		0:
+			acidcue.play()
+		1:
+			mudcue.play()
+		2:
+			gumcue.play()
+		3:
+			windcue.play()
+			
 	remove_from_group("killer")
 
 

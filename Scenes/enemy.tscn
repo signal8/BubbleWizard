@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b7f7kximqjrij"]
+[gd_scene load_steps=75 format=3 uid="uid://b7f7kximqjrij"]
 
 [ext_resource type="Script" path="res://Code/enemy.gd" id="1_h2nde"]
 [ext_resource type="Texture2D" uid="uid://ckumjkorgx3tq" path="res://Art/frog1.png" id="2_24xor"]
@@ -14,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://xoj8j1gyfnpx" path="res://Art/Elephant_blow_animation.png" id="12_o7086"]
 [ext_resource type="Texture2D" uid="uid://d0gtpr6dfqmxp" path="res://Art/frog_jump_animation.png" id="13_7ff4f"]
 [ext_resource type="Texture2D" uid="uid://cn8grovrr5fve" path="res://Art/Monkey_attack_animation.png" id="14_dtow2"]
+[ext_resource type="AudioStream" uid="uid://bmycmwatr7bq3" path="res://Sound/Pop/GenPop _mixdown.wav" id="15_4xxxu"]
+[ext_resource type="AudioStream" uid="uid://cy8qk2fhh1mpj" path="res://Sound/Pop/GenPop2_mixdown.wav" id="15_e1k7l"]
+[ext_resource type="AudioStream" uid="uid://dwktcybs84igb" path="res://Sound/Pickup/Absorption/Acid Absorb_mixdown.wav" id="17_8wlpx"]
+[ext_resource type="AudioStream" uid="uid://ca86rs8w5hwm7" path="res://Sound/Pickup/Absorption/GumAbsorb_mixdown.wav" id="18_107pq"]
+[ext_resource type="AudioStream" uid="uid://c3yvgpy068er1" path="res://Sound/Pickup/Absorption/MudAbsorb_mixdown.wav" id="19_re7o0"]
+[ext_resource type="AudioStream" uid="uid://dbwx45q3b44fj" path="res://Sound/Pickup/Absorption/WindAbsorb_mixdown.wav" id="20_rrsjs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e35f5"]
 size = Vector2(40, 28)
@@ -472,7 +478,32 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_24xor")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o0qgw")
 animation = &"elephantattack"
 frame_progress = 0.953166
+
+[node name="MUD" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_e1k7l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_4xxxu")
+
+[node name="AbsorptionAudio" type="Node" parent="."]
+
+[node name="Acid" type="AudioStreamPlayer" parent="AbsorptionAudio"]
+stream = ExtResource("17_8wlpx")
+volume_db = 10.0
+
+[node name="Gum" type="AudioStreamPlayer" parent="AbsorptionAudio"]
+stream = ExtResource("18_107pq")
+volume_db = 10.0
+
+[node name="Mud" type="AudioStreamPlayer" parent="AbsorptionAudio"]
+stream = ExtResource("19_re7o0")
+volume_db = 10.0
+
+[node name="Wind" type="AudioStreamPlayer" parent="AbsorptionAudio"]
+stream = ExtResource("20_rrsjs")
+volume_db = 10.0

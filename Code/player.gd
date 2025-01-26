@@ -8,6 +8,8 @@ extends CharacterBody2D
 
 var queued_direction = 1
 @onready var timer = $Timer
+@onready var audio = $AudioStreamPlayer
+@onready var walk  = $pantera_walk
 var collider
 var dying = false
 
@@ -26,12 +28,16 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	
 	if direction:
+		if walk.playing == false and is_on_floor():
+			walk.pitch_scale = randf_range(0.8, 1.2)
+			walk.play()
 		velocity.x = direction * SPEED
 		queued_direction = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if Input.is_action_just_pressed("bubble") and timer.is_stopped():
+		audio.play()
 		shootBubble(queued_direction)
 		timer.start(firing_rate)
 	

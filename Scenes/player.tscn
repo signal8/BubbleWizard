@@ -1,9 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://c6g21h30k2ahx"]
+[gd_scene load_steps=34 format=3 uid="uid://c6g21h30k2ahx"]
 
 [ext_resource type="Script" path="res://Code/player.gd" id="1_s06i6"]
 [ext_resource type="PackedScene" uid="uid://deqg3o34e7uoj" path="res://Scenes/bubble.tscn" id="2_0au1k"]
 [ext_resource type="Texture2D" uid="uid://nfdepp04nwn3" path="res://Art/Bubble_wizard_animation_12525.png" id="3_3hceg"]
 [ext_resource type="PackedScene" uid="uid://cvqp3qgsd3nj5" path="res://Scenes/title.tscn" id="3_wjd4s"]
+[ext_resource type="AudioStream" uid="uid://dpadlbgbxdnic" path="res://Sound/Player Sounds/BubbleShot_mixdown.wav" id="5_8la6m"]
+[ext_resource type="AudioStream" uid="uid://cu71pm56ih6yu" path="res://Sound/Enviroment -Walking Pickup Puzzle/Walking/GameWalk.wav" id="5_27tsv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kndku"]
 radius = 23.0
@@ -243,3 +245,10 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_mfddi")
 animation = &"walkright"
 frame_progress = 0.757556
+
+[node name="pantera_walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_27tsv")
+volume_db = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8la6m")
