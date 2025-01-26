@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpadlbgbxdnic"
+path="res://.godot/imported/BubbleShot_mixdown.wav-8b8aeb1d17d67cf20356a493f5f5069f.sample"
+
+[deps]
+
+source_file="res://Sound/Player Sounds/BubbleShot_mixdown.wav"
+dest_files=["res://.godot/imported/BubbleShot_mixdown.wav-8b8aeb1d17d67cf20356a493f5f5069f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db5k8ercuoe7c"
+path="res://.godot/imported/FrogSFXPickup_mixdown.wav-02e302fa1dd98b4ac9adb728a8a8725a.sample"
+
+[deps]
+
+source_file="res://Sound/Pickup/Animal Sound NF/FrogSFXPickup_mixdown.wav"
+dest_files=["res://.godot/imported/FrogSFXPickup_mixdown.wav-02e302fa1dd98b4ac9adb728a8a8725a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

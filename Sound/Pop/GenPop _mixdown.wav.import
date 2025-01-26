@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmycmwatr7bq3"
+path="res://.godot/imported/GenPop _mixdown.wav-cda7e00031408084fe2a0191e68612af.sample"
+
+[deps]
+
+source_file="res://Sound/Pop/GenPop _mixdown.wav"
+dest_files=["res://.godot/imported/GenPop _mixdown.wav-cda7e00031408084fe2a0191e68612af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

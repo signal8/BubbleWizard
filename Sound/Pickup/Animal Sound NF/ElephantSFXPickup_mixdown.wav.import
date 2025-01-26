@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0wb7txp30cml"
+path="res://.godot/imported/ElephantSFXPickup_mixdown.wav-cb65f160d8da93c0b18580f3af0ef5d2.sample"
+
+[deps]
+
+source_file="res://Sound/Pickup/Animal Sound NF/ElephantSFXPickup_mixdown.wav"
+dest_files=["res://.godot/imported/ElephantSFXPickup_mixdown.wav-cb65f160d8da93c0b18580f3af0ef5d2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
