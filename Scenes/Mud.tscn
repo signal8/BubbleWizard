@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://drttrroo2d2m0"]
+[gd_scene load_steps=12 format=4 uid="uid://drttrroo2d2m0"]
 
 [ext_resource type="Texture2D" uid="uid://1a3tny0bocne" path="res://Art/tile-placeholder.png" id="2_c3jx6"]
 [ext_resource type="PackedScene" uid="uid://c6g21h30k2ahx" path="res://Scenes/player.tscn" id="3_f5pdf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7f7kximqjrij" path="res://Scenes/enemy.tscn" id="4_1iwou"]
 [ext_resource type="Texture2D" uid="uid://dl0pxfkpo53js" path="res://Art/grates_mud_final.png" id="4_qiqas"]
 [ext_resource type="PackedScene" uid="uid://b6eudqn7nytfv" path="res://Scenes/spike.tscn" id="6_cab3a"]
+[ext_resource type="PackedScene" uid="uid://bluqd31f10b5" path="res://Scenes/crossbow.tscn" id="7_f4ex0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wb00"]
 texture = ExtResource("2_c3jx6")
@@ -139,76 +140,131 @@ type = 1
 
 [node name="Hazards" type="Node" parent="."]
 
-[node name="Spike" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spikes" type="Node" parent="Hazards"]
+
+[node name="Spike" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1632, 1518)
 
-[node name="Spike2" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike2" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1696, 1518)
 
-[node name="Spike3" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike3" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1760, 1518)
 
-[node name="Spike4" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike4" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1824, 1518)
 
-[node name="Spike5" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike5" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1888, 1518)
 
-[node name="Spike6" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike6" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1932, 1518)
 
-[node name="Spike7" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike7" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1966, 1440)
 rotation = -1.5708
 
-[node name="Spike8" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike8" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1966, 1375)
 rotation = -1.5708
 
-[node name="Spike9" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike9" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1056, 686)
 
-[node name="Spike10" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike10" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1120, 686)
 
-[node name="Spike11" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike11" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1184, 686)
 
-[node name="Spike12" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike12" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1248, 686)
 
-[node name="Spike13" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike13" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1312, 686)
 
-[node name="Spike14" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike14" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1376, 686)
 
-[node name="Spike15" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike15" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(1440, 686)
 
-[node name="Spike16" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike16" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(288, 1134)
 
-[node name="Spike17" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike17" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(352, 1134)
 
-[node name="Spike18" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike18" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(416, 1134)
 
-[node name="Spike19" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike19" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(480, 1134)
 
-[node name="Spike20" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike20" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(416, 1390)
 
-[node name="Spike21" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike21" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(480, 1390)
 
-[node name="Spike22" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike22" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(544, 1390)
 
-[node name="Spike23" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike23" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(608, 1390)
 
-[node name="Spike24" parent="Hazards" instance=ExtResource("6_cab3a")]
+[node name="Spike24" parent="Hazards/Spikes" instance=ExtResource("6_cab3a")]
 position = Vector2(673, 1390)
+
+[node name="Crossbows" type="Node" parent="Hazards"]
+
+[node name="Crossbow" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(2136, 1760)
+rotation = 1.5708
+
+[node name="Crossbow2" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(2200, 1760)
+rotation = 1.5708
+
+[node name="Crossbow3" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(2264, 1760)
+rotation = 1.5708
+
+[node name="Crossbow4" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(2328, 1760)
+rotation = 1.5708
+
+[node name="Crossbow5" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(2392, 1760)
+rotation = 1.5708
+
+[node name="Crossbow6" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(488, 928)
+rotation = -1.5708
+
+[node name="Crossbow7" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(552, 928)
+rotation = -1.5708
+
+[node name="Crossbow8" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(616, 928)
+rotation = -1.5708
+
+[node name="Crossbow9" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(680, 928)
+rotation = -1.5708
+
+[node name="Crossbow10" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(992, 808)
+
+[node name="Crossbow11" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(992, 872)
+
+[node name="Crossbow12" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(992, 936)
+
+[node name="Crossbow13" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(992, 1000)
+
+[node name="Crossbow14" parent="Hazards/Crossbows" instance=ExtResource("7_f4ex0")]
+position = Vector2(992, 1064)

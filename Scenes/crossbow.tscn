@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bluqd31f10b5"]
+[gd_scene load_steps=5 format=3 uid="uid://bluqd31f10b5"]
 
 [ext_resource type="Texture2D" uid="uid://bdoni0xm7ueih" path="res://Art/crossbow.png" id="1_ghucl"]
 [ext_resource type="Script" path="res://Code/crossbow.gd" id="1_t5fmt"]
+[ext_resource type="PackedScene" uid="uid://cghq6syv48bs6" path="res://Scenes/arrow.tscn" id="2_kgbfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcsx2"]
 size = Vector2(60, 31.5)
 
 [node name="Crossbow" type="Area2D"]
 script = ExtResource("1_t5fmt")
+arrow = ExtResource("2_kgbfp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -17,5 +19,9 @@ texture = ExtResource("1_ghucl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0.25)
 shape = SubResource("RectangleShape2D_jcsx2")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
